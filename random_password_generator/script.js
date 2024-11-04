@@ -27,7 +27,7 @@ function copyToClipboard() {
   navigator.clipboard
     .writeText(passwordBox.innerText)
     .then(() => {
-      console.log("Password copied");
+      alert("Password copied to clipboard");
     })
     .catch((err) => {
       alert("Could not copy the password");
