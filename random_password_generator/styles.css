@@ -45,11 +45,16 @@ body {
   cursor: pointer;
 }
 
-.display input {
+#password {
   border: 0;
   outline: 0;
   font-size: 24px;
 }
+/* .display input {
+  border: 0;
+  outline: 0;
+  font-size: 24px;
+} */
 
 .container button img {
   width: 28px;

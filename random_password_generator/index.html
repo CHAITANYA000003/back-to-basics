@@ -13,8 +13,13 @@
         <span>Random Password</span>
       </h1>
       <div class="display">
-        <input type="text" id="password" placeholder="Password" />
-        <img src="images/copy.png" alt="copy image" />
+        <!-- <input type="text" id="password" placeholder="Password" /> -->
+        <div id="password" placeholder="Password">Password</div>
+        <img
+          src="images/copy.png"
+          alt="copy image"
+          onclick="copyToClipboard()"
+        />
       </div>
       <button onclick="createPassword()">
         <img src="images/generate.png" alt="generate password" />

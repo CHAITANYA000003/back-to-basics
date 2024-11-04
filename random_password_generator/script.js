@@ -18,5 +18,18 @@ function createPassword() {
     password += allChars[Math.floor(Math.random() * allChars.length)];
   }
 
-  passwordBox.value = password;
+  passwordBox.innerText = password;
+}
+
+function copyToClipboard() {
+  // select() only works with input and textarea tags
+  //   passwordBox.select();
+  navigator.clipboard
+    .writeText(passwordBox.innerText)
+    .then(() => {
+      console.log("Password copied");
+    })
+    .catch((err) => {
+      alert("Could not copy the password");
+    });
 }
