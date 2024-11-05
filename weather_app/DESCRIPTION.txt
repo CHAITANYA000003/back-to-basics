@@ -1,1 +1,1 @@
-This will be weather app.
+This will be a weather app.
