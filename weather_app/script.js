@@ -84,7 +84,25 @@ async function updateWeatherInfo(city) {
 
   currentDateTxt.textContent = getCurrentDate();
   weatherSummaryImg.src = `assets/weather/${getWeatherIcon(id)}`;
+
+  await updateForecastsInfo(city);
+
   showDisplaySection(weatherInfoSection);
+}
+
+async function updateForecastsInfo(city) {
+  const forecastsData = await getFetchData("forecast", city);
+  const timeTaken = "12:00:00";
+  const todayDate = new Date().toISOString().split("T")[0];
+
+  forecastsData.list.forEach((forecastWeather) => {
+    if (
+      forecastWeather.dt_txt.includes(timeTaken) &&
+      !forecastWeather.dt_txt.includes(todayDate)
+    ) {
+      console.log(forecastWeather);
+    }
+  });
 }
 
 function showDisplaySection(section) {
